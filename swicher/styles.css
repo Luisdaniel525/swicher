@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+    transition: background-color 0.3s, color 0.3s;
+    background-color: #000000;  /* Color fondo oscuro */
+    color: white;  /* Color texto oscuro */
+}
+
+.container {
+    position: relative;
+}
+
+
+
+/* Estilos del switcher */
+.switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    width: 60px; /* Ancho total del switcher */
+    height: 34px; /* Altura total del switcher */
+    background-color: #ccc;
+    border-radius: 34px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px; /* Altura del círculo */
+    width: 26px; /* Ancho del círculo */
+    left: 4px; /* Desplazamiento izquierdo */
+    bottom: 4px; /* Desplazamiento abajo */
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+input:checked + .slider {
+    background-color: #1abc9c;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px); /* Mueve el círculo a la derecha */
+}
+
+/* Estilos para el tema claro */
+body.light-theme {
+    background-color: #ecf0f1;  /* Color fondo claro */
+    color: #333;  /* Color texto claro */
+}
+
+.light-theme .add-button {
+    background-color: #16a085;  /* Color botón en claro */
+}
+
